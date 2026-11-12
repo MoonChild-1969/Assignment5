@@ -1,0 +1,172 @@
+Query 1
+╭──────────────────────╮
+│ antibioticContainers │
+╞══════════════════════╡
+│                  100 │
+╰──────────────────────╯
+
+I look for items with “antibiotics” in the description and add up the quantities
+currently in stock.
+
+Query 2
+╭───────────────╮
+│ volunteerName │
+╞═══════════════╡
+│ Gene Lewin    │
+╰───────────────╯
+
+I keep volunteers whose recorded phone number does not start with 2 and whose last
+name is not Jones. Each matching name appears once.
+
+Query 3
+╭───────────────╮
+│ volunteerName │
+╞═══════════════╡
+│ George Brewer │
+╰───────────────╯
+
+I use the assignment records to find volunteers linked to tasks whose type is
+“transporting.” Each matching name appears once.
+
+Query 4
+╭────────────────────────────────╮
+│        taskDescription         │
+╞════════════════════════════════╡
+│ Prepare 100 food packages      │
+│ Take packages to the warehouse │
+╰────────────────────────────────╯
+
+I start with all tasks and look for a matching assignment for each one. I list the
+descriptions of tasks that have no match.
+
+Query 5
+╭─────────────────╮
+│ packageTypeName │
+╞═════════════════╡
+│ food and water  │
+╰─────────────────╯
+
+I look for items with “bottle” in their description and trace them through the
+package contents to their package types. Each matching type appears once.
+
+Query 6
+╭───────────────────────╮
+│    itemDescription    │
+╞═══════════════════════╡
+│ bottle of antibiotics │
+│ bottle of aspirin     │
+│ flashlight            │
+│ pack of bandages      │
+╰───────────────────────╯
+
+I check each item against the package contents and list the descriptions of items
+that never appear in a package.
+
+Query 7
+╭────────────────────────────────╮
+│        taskDescription         │
+╞════════════════════════════════╡
+│ Prepare 20 children's packages │
+│ Prepare 100 water packages     │
+│ Prepare 5,000 packages         │
+╰────────────────────────────────╯
+
+I look for volunteer addresses that end in NJ and use the assignment records to
+find their tasks. Each matching task description appears once.
+
+Query 8
+╭───────────────╮
+│ volunteerName │
+╞═══════════════╡
+│ Joan Simmons  │
+│ Chris Jordan  │
+╰───────────────╯
+
+I keep assignments that started on or after January 1, 2021 and before July 1,
+2021. Then I list each matching volunteer name once.
+
+Query 9
+╭───────────────╮
+│ volunteerName │
+╞═══════════════╡
+│ Julie White   │
+│ Gerry Banks   │
+╰───────────────╯
+
+I find packages that contain an item with “spam” in its description. Then I use
+the tasks that produced those packages to find the assigned volunteers.
+
+Query 10
+╭─────────────────╮
+│ itemDescription │
+╞═════════════════╡
+│ Baby formula    │
+╰─────────────────╯
+
+I multiply the quantity of each item in a package by its unit value. I list the
+item descriptions where that amount is exactly $100.
+
+Query 11
+╭────────────────┬────────────────╮
+│ taskStatusName │ volunteerCount │
+╞════════════════╪════════════════╡
+│ open           │              4 │
+│ closed         │              3 │
+│ ongoing        │              2 │
+│ pending        │              1 │
+╰────────────────┴────────────────╯
+
+I count each volunteer once per task status, even if they have several assignments
+with that status. I include every status and sort the counts from highest to
+lowest.
+
+Query 12
+╭──────────┬─────────────╮
+│ taskCode │ totalWeight │
+╞══════════╪═════════════╡
+│      106 │       308.0 │
+╰──────────┴─────────────╯
+
+I add up the weights of all packages produced by each task. Then I sort the totals
+from highest to lowest and return the task code and weight from the first row.
+
+Query 13
+╭───────────╮
+│ taskCount │
+╞═══════════╡
+│         3 │
+╰───────────╯
+
+I match each task to its type and count the tasks whose type is anything other
+than “packing.”
+
+Query 14
+╭─────────────────╮
+│ itemDescription │
+╞═════════════════╡
+│ can of spam     │
+│ dried fruit     │
+│ men's coat      │
+│ sleeping bag    │
+│ tent            │
+│ women's coat    │
+╰─────────────────╯
+
+I start with items that appear in at least one package. For each item, I count the
+distinct volunteers assigned to the tasks that produced those packages and keep
+items with fewer than three volunteers.
+
+Query 15
+╭───────────┬────────────╮
+│ packageId │ totalValue │
+╞═══════════╪════════════╡
+│         6 │      150.0 │
+│         2 │      151.0 │
+│         4 │      350.0 │
+│        10 │      750.0 │
+│         5 │     1420.0 │
+╰───────────┴────────────╯
+
+I multiply each item’s quantity by its unit value and add those amounts within
+each package. I keep packages worth more than $100 and sort them from lowest to
+highest total value.
